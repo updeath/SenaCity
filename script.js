@@ -1,14 +1,3 @@
-// Smooth scroll para los enlaces de navegación
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const section = document.querySelector(this.getAttribute('href'));
-        section.scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Animación para las cards al hacer scroll
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver(
@@ -28,4 +17,14 @@ cards.forEach(card => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s, transform 0.5s';
     observer.observe(card);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const othersLink = document.getElementById('others');
+    const submenu = othersLink.nextElementSibling;
+
+    othersLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita el comportamiento predeterminado
+        submenu.classList.toggle('menu-visible');
+    });
 });

@@ -1,0 +1,166 @@
+/* Estilos innovadores para los centros comerciales */
+.malls-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.malls-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.mall-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.mall-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.mall-image-container {
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.mall-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mall-card:hover .mall-image {
+    transform: scale(1.1);
+}
+
+.mall-info {
+    padding: 2rem;
+    background: white;
+    position: relative;
+}
+
+.mall-name {
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+}
+
+.mall-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, transparent);
+    transition: width 0.3s ease;
+}
+
+.mall-card:hover .mall-name::after {
+    width: 100%;
+}
+
+.mall-features {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mall-description {
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.mall-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Animación de entrada para las tarjetas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mall-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.mall-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mall-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.mall-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .malls-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

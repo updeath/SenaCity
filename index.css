@@ -18,7 +18,7 @@ body {
 }
 
 .header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/city.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/city2_LE_auto_x4.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -55,7 +55,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 2rem;
+    gap: 3.5rem;
 }
 
 nav a {
@@ -63,10 +63,52 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 nav a:hover {
     color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Estilo básico del submenú */
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none; /* Ocultamos el submenú por defecto */
+    position: absolute; /* Posición relativa al padre */
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.submenu li {
+    margin: 0;
+    padding: 0;
+}
+
+.submenu li a {
+    display: block;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se corte */
+    transition: background-color 0.3s;
+}
+
+.submenu li a:hover {
+    background-color: var(--accent-color); /* Cambiamos el color al pasar el cursor */
+}
+
+/* Mostrar el submenú al pasar el cursor sobre el elemento padre */
+li:hover .submenu {
+    display: block;
+}
+
+/* Asegúrate de que el contenedor del menú tenga posición relativa para posicionar el submenú */
+nav ul li {
+    position: relative;
 }
 
 .section {
@@ -162,4 +204,14 @@ nav a:hover {
         align-items: center;
         gap: 1rem;
     }
+
+    li:hover .submenu {
+        display: block;
+    }
+}
+
+/* Para pantallas pequeñas, el submenú se controlará con JavaScript */
+.menu-visible .submenu {
+    display: block;
+    position: static;
 }
