@@ -28,3 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
         submenu.classList.toggle('menu-visible');
     });
 });
+
+console.log("el archivo se lee");
