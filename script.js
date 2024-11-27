@@ -29,4 +29,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-console.log("el archivo se lee");
