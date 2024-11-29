@@ -149,6 +149,10 @@ nav ul li {
     object-fit: cover;
 }
 
+.card_description img {
+    height: 300px;
+}
+
 .card-content {
     padding: 1.5rem;
 }

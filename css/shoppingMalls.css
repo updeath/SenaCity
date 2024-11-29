@@ -156,3 +156,11 @@
         gap: 2rem;
     }
 }
+
+.malls-container h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 1000;
+    font-size: 40px;
+    text-decoration: underline;
+}
